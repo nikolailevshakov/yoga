@@ -34,3 +34,5 @@ window.addEventListener('DOMContentLoaded', function() {
 
     hideTabContent(1);
 });
+
+let new;
