@@ -22,7 +22,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
     info.addEventListener('click', function (event) {
         let target = event.target;
-        console.log(target);
         if (target && target.classList.contains('info-header-tab')) {
             for (let i=0; i<tab.length; i++) {
                 if (target == tab[i]) {
@@ -36,8 +35,8 @@ window.addEventListener('DOMContentLoaded', function() {
     hideTabContent(1);
 
 
-    // TImer
 
+// Timer
     let deadline = '2020-07-04';
 // get time untill deadline
     function getTimeRemaining(endtime) {
@@ -78,4 +77,22 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
     setClock('timer', deadline);
+
+// Modal window
+
+    let more = document.querySelector('.more'),
+        overlay = document.querySelector('.overlay'),
+        close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+    });
+
+    close.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    })
 });
