@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', ()=> {
     'use strict';
 
 // Tabs through event delegation
@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    info.addEventListener('click', function (event) {
+    info.addEventListener('click', (event)=> {
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')) {
             for (let i=0; i<tab.length; i++) {
